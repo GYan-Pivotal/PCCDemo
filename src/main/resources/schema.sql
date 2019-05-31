@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS books (isbn VARCHAR(50) PRIMARY KEY,   title VARCHAR(50),   author  VARCHAR(50),   genre VARCHAR(50));

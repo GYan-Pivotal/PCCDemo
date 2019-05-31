@@ -1,4 +1,4 @@
-package io.pivotal.pcc.demo.client.repositories;
+package io.pivotal.pcc.demo.client.repositories.pcc;
 
 import org.springframework.data.repository.CrudRepository;
 
