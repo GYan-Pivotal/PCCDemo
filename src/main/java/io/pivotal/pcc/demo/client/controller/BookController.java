@@ -34,4 +34,32 @@ public class BookController {
 		return String
 			.format("It took: %d millis to execute getBook: %s for ISBN: %s", (end - start), book.toString(), isbn);
 	}
+
+	@GetMapping("/bookspcc")
+	public String getBooksPCC() {
+		long start = System.currentTimeMillis();
+		Iterable<Book> books = bookService.findAllFromPCC();
+		long end = System.currentTimeMillis();
+
+		String returnbooks = "";
+		returnbooks = "PCC: It took: %d millis to execute getBooks:";
+		for (Book book1 : books) {
+			returnbooks = returnbooks+"ISBN: "+book1.getIsbn()+",books" +book1.toString()+"/r/n";
+		}
+		return returnbooks;
+	}
+
+	@GetMapping("/booksjpa")
+	public String getBooksJpa() {
+		long start = System.currentTimeMillis();
+		Iterable<Book> books = bookService.findAllfromJPA();
+		long end = System.currentTimeMillis();
+
+		String returnbooks = "";
+		returnbooks = "JPA: It took: %d millis to execute getBooks:";
+		for (Book book1 : books) {
+			returnbooks = returnbooks+"ISBN: "+book1.getIsbn()+",books" +book1.toString()+"/r/n";
+		}
+		return returnbooks;
+	}
 }

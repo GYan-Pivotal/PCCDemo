@@ -1,6 +1,5 @@
 package io.pivotal.pcc.demo.client.service;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
@@ -65,5 +64,13 @@ public class BookService {
 	@CachePut(cacheNames = "Books", key = "#root.args[0].isbn")
 	public Book addBook(Book book) {
 		return book;
+	}
+
+	public Iterable<Book> findAllFromPCC() {
+		return bookRepository.findAll();
+	}
+
+	public Iterable<Book> findAllfromJPA() {
+		return jPABookRepository.findAll();
 	}
 }

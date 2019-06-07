@@ -26,6 +26,7 @@ public class Book implements Serializable {
 
 	@Id
 	@javax.persistence.Id
+	@Getter
 	private String isbn;
 
 	@Getter
